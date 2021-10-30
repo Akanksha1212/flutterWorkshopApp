@@ -12,7 +12,7 @@ class Level extends StatefulWidget {
 }
 
 List<String> musicimage = [
-  'https://i.guim.co.uk/img/media/c8b1d78883dfbe7cd3f112495941ebc0b25d2265/256_0_3840_2304/master/3840.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=579884b0bd058f1350519d3cc586d587',
+  'https://i.pinimg.com/originals/b0/d5/08/b0d50804417705f520896deb50e05de1.jpg',
   'https://icons8.com/vue-static/landings/animated-icons/icons/sound/sound_200.gif'
 ];
 int index = 0;
@@ -106,7 +106,7 @@ class _LevelState extends State<Level> {
                               ),
                             ),
                             Text(
-                              'Hi! I am Ava. I love coding and ',
+                              'Hi! I am Ava. I love coding and I am learning flutter.',
                               textAlign: TextAlign.center,
                               style: GoogleFonts.caveat(
                                 textStyle: TextStyle(
@@ -122,6 +122,28 @@ class _LevelState extends State<Level> {
                   ),
                   SizedBox(
                     height: 30,
+                  ),
+                  Container(
+                    width: 500.0,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          "${position.inMinutes}:${position.inSeconds.remainder(60)}",
+                          style: TextStyle(
+                            fontSize: 18.0,
+                          ),
+                        ),
+                        slider(),
+                        Text(
+                          "${musicLength.inMinutes}:${musicLength.inSeconds.remainder(60)}",
+                          style: TextStyle(
+                            fontSize: 18.0,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   GestureDetector(
                     onTap: () {
@@ -145,28 +167,6 @@ class _LevelState extends State<Level> {
                         backgroundImage: NetworkImage(musicimage[index]),
                         radius: 50,
                       ),
-                    ),
-                  ),
-                  Container(
-                    width: 500.0,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          "${position.inMinutes}:${position.inSeconds.remainder(60)}",
-                          style: TextStyle(
-                            fontSize: 18.0,
-                          ),
-                        ),
-                        slider(),
-                        Text(
-                          "${musicLength.inMinutes}:${musicLength.inSeconds.remainder(60)}",
-                          style: TextStyle(
-                            fontSize: 18.0,
-                          ),
-                        ),
-                      ],
                     ),
                   ),
                 ],
